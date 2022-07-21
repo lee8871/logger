@@ -38,7 +38,6 @@ log3.LogLine($"【消息】这条消息会直接被两个日志记录器记录")
 ``` cs
 log4 = new  TimerLogger(log0);
 log4.LogLine($"【消息】这条消息会被加上时间标记");
-`【10:21:32:956】【消息】这条消息会被加上时间标记`
 ```
 `【10:21:32:956】【消息】这条消息会被加上时间标记`
 
@@ -54,10 +53,7 @@ log5.LogLine($"【消息】这条消息会被加上“电机模块”标签");
 Program.log5 = new LoggerToRTB(this.LogTextRTB);
 Program.log5.LogLine($"【消息】这条消息会写入RichTextBox");
 ```
-<<<<<<< HEAD
-=======
 
->>>>>>> 5fb4d6bc76cb1f148f99337a8b1148bab422ca52
 ![20220721_100850_62](MarkdownImage/20220721_100850_62.png)
 
 ## 日志显示的颜色
