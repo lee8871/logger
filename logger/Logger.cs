@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slzd.Log {
+namespace Sl.Log {
 	public interface Logger {
 		Logger Cc { get; }//抄送给另一个日志器
 		void LogLine(string str);

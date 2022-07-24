@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Slzd.Log {
+namespace Sl.Log {
 	public class LoggerToRTB : Logger {
 
 		static public (string word, Color color)[] default_word_color_pair = {

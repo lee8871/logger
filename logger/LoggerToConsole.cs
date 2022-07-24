@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slzd.Log {
+namespace Sl.Log {
 	public class LoggerToConsole: Logger {
 		public Logger Cc { get; }
 		public LoggerToConsole(Logger cc = null) {

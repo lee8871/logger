@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slzd.Log {
+namespace Sl.Log {
 	public class LoggerToFile : Logger {
 		public string Log_File { get; }
 		public Logger Cc { get; }

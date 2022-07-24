@@ -1,4 +1,4 @@
-﻿using Slzd.Log;
+﻿using Sl.Log;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slzd.Log {
+namespace Sl.Log {
 	public class TagLogger : Logger {
 		public TagLogger(string tag, Logger base_logger, Logger cc = null) {
 			Tag = tag;
