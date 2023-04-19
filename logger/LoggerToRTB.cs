@@ -48,11 +48,11 @@ namespace Sl.Log {
 			Color select_color = default;
 			string[] sts = log.Split('】');
 			for (int i = 0; i < sts.Length - 1; i++) {
-				select_color = word_color_pair.FirstOrDefault(pair => pair.word == sts[i].Substring(1)).color;
-				if (select_color != default) {
+				if (sts[i].Substring(0, 1) != "【") {
 					break;
 				}
-				if (sts[i].Substring(0, 1) != "【") {
+				select_color = word_color_pair.FirstOrDefault(pair => pair.word == sts[i].Substring(1)).color;
+				if (select_color != default) {
 					break;
 				}
 			}
