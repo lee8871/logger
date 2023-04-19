@@ -10,17 +10,17 @@ namespace Sl.Log {
 	public class LoggerToRTB : Logger {
 
 		static public (string word, Color color)[] default_word_color_pair = {
-		("【崩溃", Color.DarkRed),
-		("【错误", Color.Red),
-		("【警告", Color.DarkViolet),
-		("【消息", Color.MidnightBlue),
+		("崩溃", Color.DarkRed),
+		("错误", Color.Red),
+		("警告", Color.DarkViolet),
+		("消息", Color.MidnightBlue),
 		};
 		static public (string word, Color color)[] success_word_color_pair = {
-		("【成功", Color.DarkGreen),
-		("【失败", Color.DarkRed),
-		("【错误", Color.DarkOrange),
-		("【警告", Color.DarkViolet),
-		("【消息", Color.MidnightBlue),
+		("成功", Color.DarkGreen),
+		("失败", Color.DarkRed),
+		("错误", Color.DarkOrange),
+		("警告", Color.DarkViolet),
+		("消息", Color.MidnightBlue),
 		};
 
 		public (string word, Color color)[] word_color_pair = default_word_color_pair;
@@ -40,15 +40,15 @@ namespace Sl.Log {
 				LogRTB.Invoke(d, log);
 				return;
 			}
-			if (LogRTB.IsDisposed) return;
-			LogRTB.ScrollToCaret();
+			if (LogRTB.IsDisposed) return; 
 			LogRTB.SelectionStart = LogRTB.TextLength;
 			LogRTB.SelectionLength = 0;
+			LogRTB.ScrollToCaret();
 
 			Color select_color = default;
 			string[] sts = log.Split('】');
 			for (int i = 0; i < sts.Length - 1; i++) {
-				select_color = word_color_pair.FirstOrDefault(pair => pair.word == sts[i]).color;
+				select_color = word_color_pair.FirstOrDefault(pair => pair.word == sts[i].Substring(1)).color;
 				if (select_color != default) {
 					break;
 				}
@@ -61,6 +61,12 @@ namespace Sl.Log {
 			}
 			LogRTB.SelectionColor = select_color;
 			LogRTB.AppendText(log + '\n');
+
+			LogRTB.SelectionStart = LogRTB.TextLength;
+			LogRTB.SelectionLength = 0;
+			LogRTB.ScrollToCaret();
+
+
 		}
 	}
 }
